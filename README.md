@@ -16,5 +16,7 @@
 纯php文件（如index.php） +  纯html文件包含了动态标签 （index.tpl）通过 模版类template.class.php(需要模版解析类 解析 tpl文件里的动态标签，还需要读取系统变量库profile.xml) 
 生成 编译文件（混合php+html文件 123abc23index.tpl.php）再生成缓存文件（纯静态html文件 123abc23index.tpl.html）
 
-第二次访问时（第二次访问index.php)
+第二次访问时（第二次访问index.php）
 直接访问缓存文件（纯静态html文件 123abc23index.tpl.html）
+
+
