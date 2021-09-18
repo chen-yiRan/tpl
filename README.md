@@ -20,3 +20,6 @@
 直接访问缓存文件（纯静态html文件 123abc23index.tpl.html）
 
 
+每一个php文件都对应一个tpl文件，每一个php文件都需注入变量
+
+

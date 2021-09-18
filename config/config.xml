@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--用来存储系统变量，不用每个php文件都去注入-->
+<root>
+    <taglib>
+        <name>webname</name>
+        <value>系统变量的webname</value>
+    </taglib>
+
+    <taglib>
+        <name>pagesize</name>
+        <value>10</value>
+    </taglib>
+</root>

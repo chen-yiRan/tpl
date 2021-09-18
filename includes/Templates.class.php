@@ -2,12 +2,20 @@
 class Template {
     //我想通过一个字段来接收变量，但是又不知道有多少变量要接收，所以需要动态接收变量，使用数组来实现这个功能
     private $_vars = array();
+    //保存系统变量
+    private $_configs = array();
 
     //创建一个构造方法来验证各个目录是否存在
     public function __construct()
     {
         if(!is_dir(TPL_DIR) || !is_dir(TPL_C_DIR) || !is_dir(CACHE)){
             exit("ERROR:模版目录或编译目录或缓存目录不存在！请手工添加");
+        }
+        //载入和保存系统变量
+        $_sxe = simplexml_load_file(ROOT_PATH. '/config/config.xml');
+        $_tagLib = $_sxe->xpath('/root/taglib');
+        foreach ($_tagLib as $_tag){
+            $this->_configs["$_tag->name"] = $_tag->value;
         }
     }
     //用于注入变量
@@ -39,5 +47,6 @@ class Template {
 
         //载入编译文件
         include $_parFile;
+
     }
 }
